@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: poppins,sans-serif;
+}
+body{
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(45deg,#015170,#a7c5d1,#d0eaf5);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.container{
+    position: relative;
+    width: 70vw;
+    height: 80vh;
+    background:#015170 ;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px 0 rgb(0, 0, 0, 0.3), 0 6px 20px 0 rgb(0, 0, 0, 0.3);
+ 
+}
+header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    background:#015170 ;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px 0 20px;
+    border-radius: 15px 15px 0 0 ;
+    overflow: hidden;
+    animation: to_bottom 1s ease forwards;
+}
+
+header h1 {
+    color: #4ec3f1;
+    margin-left: 10px;
+    padding: 10px;
+    
+}
+
+
+header div nav a{
+    color:white ;
+    margin-left: 15px;
+}
+header div nav .active,
+header div nav a:hover{
+    color: #4ec3f1;
+}
+.navbar{
+    top: -40px;
+    left: 49%;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    font-size: 14px;
+    z-index: 99;
+    font-weight: 600;
+}
+
+.image-container{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.image-container img{
+    width: 300px;
+    height:300px;
+    margin-top: 5%;
+    margin-left: 5%;
+    animation: to_left 1s ease forwards;
+}
+.text-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: -250px 40px 0 390px;
+    text-align: left;
+    color: white;
+    animation: to_left 1.5s ease forwards;
+    
+
+}
+h2, .text-container a{
+    margin-left: -380px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #4ec3f1;
+}
+h2{
+    font-weight: 700;
+    font-size: 30px;
+    animation: to_left 1.7s ease forwards;
+}
+
+.text-container a{
+    animation: to_top 1.7s ease forwards;
+}
+@keyframes to_bottom{
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes to_left{
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes to_top{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style_login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+     <div class="container">
+        <header>          
+            <a href="index.html"><h1>SecurAudit</h1></a>
+         </header>
+         <div class="signin-signup">
+
+            <form action="" class="sign-in-form">
+
+                <h2 class="title">Se connecter</h2>
+            
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" name="username">
+                </div>
+            
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" name="password">
+                </div>
+            
+            
+                <input type="submit" value="Se connecter" class="btn">
+            </form>
+            
+
+            <form action="" class="sign-up-form" id="sign-up-form">
+
+
+                <h2 class="title">S'inscrire</h2>
+            
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" name="email" id="email" autocomplete="email" style="background: none;">
+                </div>
+             
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" name="username" autocomplete="username">
+                </div>
+            
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" name="password" id="password" autocomplete="new-password">
+                </div>
+                <span class="error-message" id="password-error"></span>
+
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Confirm password" name="confirm-password" id="confirm-password" autocomplete="new-password">
+                   
+                </div>
+                <span class="error-message" id="confirm-password-error"></span>
+                <input type="submit" value="S'inscrire" class="btn">
+            </form>
+            
+            
+            
+            
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel" style=" margin-top: -54px;">
+                <div class="content">
+                    <h3 style="margin-bottom:9px">Avez vous un compte?</h3>
+                    <p>Beatae reiciendis corporis, possimus dolorum recusandae cum sapiente atque. Debitis impedit, neque perferendis excepturi nobis vero quaerat? Facilis aperiam excepturi nulla quia!</p>
+                 
+                    <button class="btn" id="sign-in-btn">Se connecter</button>
+                </div>
+               
+                     <img src="image/garde.svg" alt="" class="image">
+               
+               
+            </div>
+
+            <div class="panel right-panel">
+                <div class="content modif" style=" margin-top: 15px;">
+                    <h3>Creez un compte</h3>
+                    <p>Beatae reiciendis corporis, possimus dolorum recusandae cum sapiente atque. Debitis impedit, neque perferendis excepturi nobis vero quaerat? Facilis aperiam excepturi nulla quia!</p>
+                    <button class="btn" id="sign-up-btn">Incription</button>
+                </div>
+                <img src="image/logimage.svg" alt="" class="image">
+            </div>
+        </div>
+     </div>
+     <script src="js/app.js"></script>
+</body>
+</html>
