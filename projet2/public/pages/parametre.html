@@ -9,6 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../build/css/tailwind.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.x/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.5.x/dist/component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
   </head>
@@ -1156,25 +1157,174 @@
           <!-- Main content -->
           <div class="flex items-center justify-center flex-1 h-full p-4">
             <main>
-              <div class="container">
-                <div class="personal-info">
-                    <h2>Informations Personnelles</h2>
-                    <ul>
-                        <li><strong>Nom d'utilisateur :</strong> JohnDoe</li>
-                        <li><strong>Adresse e-mail :</strong> john.doe@example.com</li>
-                        <li><strong>Entreprise :</strong> ABC Company</li>
-                        <li><strong>Poste :</strong> Responsable de la sécurité</li>
-                        <li><strong>Adresse :</strong> 123 Rue Principale, Ville, Pays</li>
-                        <li><strong>Téléphone :</strong> +123 456 7890</li>
-                    </ul>
-                </div>
-                <div class="account-settings">
-                    <h2>Paramètres du Compte</h2>
-                    <!-- Formulaires pour modifier les paramètres du compte -->
-                </div>
-                <div class="security-settings">
-                    <h2>Paramètres de Sécurité</h2>
-                    <!-- Formulaires pour modifier les paramètres de sécurité -->
+              <div class="max-w-7xl mx-auto py-10 px-6">
+                <h1 class="text-3xl font-bold mb-8">Paramètres</h1>
+                <!-- Menu Items -->
+                <div class="space-y-4">
+                    <div x-data="{ open: false }">
+                        <button @click="open = !open" 
+                                class="w-full flex justify-between items-center px-4 py-2 bg-white shadow-sm rounded-lg">
+                            <span>Paramètres du compte</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition class="mt-2 ml-4 space-y-2">
+                            <div x-data="{ open: false }">
+                                <button @click="open = !open" 
+                                        class="w-full flex justify-between items-center px-4 py-2 bg-gray-50 shadow-sm rounded-lg">
+                                    <span>Gestion</span>
+                                </button>
+                                <div x-show="open" x-transition class="mt-2 ml-4">
+                                    <!-- Content for Gestion -->
+                                    <div class="p-4 bg-white shadow-sm rounded-lg">
+                                      <h1 class="text-3xl font-bold mb-8">Gestion du Profil</h1>
+                                      <div class="bg-white p-6 rounded-lg shadow-lg" x-data="{ editMode: false, profile: { firstName: 'John', lastName: 'Doe', email: 'john.doe@example.com', phone: '1234567890', birthdate: '1980-01-01', address: '123 Main St', position: 'Manager', department: 'IT', company: 'Acme Corp', workAddress: '456 Business Rd', workPhone: '0987654321' } }">
+                                          <form @submit.prevent="editMode = false" class="space-y-6">
+                                              <!-- Informations personnelles -->
+                                              <div>
+                                                  <h2 class="text-xl font-semibold mb-4">Informations personnelles</h2>
+                                                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                      <div>
+                                                          <label for="first-name" class="block text-sm font-medium text-gray-700">Prénom</label>
+                                                          <div x-show="!editMode" x-text="profile.firstName" class="mt-1 block w-full"></div>
+                                                          <input x-show="editMode" type="text" x-model="profile.firstName" id="first-name" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                      </div>
+                                                      <div>
+                                                          <label for="last-name" class="block text-sm font-medium text-gray-700">Nom de famille</label>
+                                                          <div x-show="!editMode" x-text="profile.lastName" class="mt-1 block w-full"></div>
+                                                          <input x-show="editMode" type="text" x-model="profile.lastName" id="last-name" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                      </div>
+                                                      <div>
+                                                          <label for="email" class="block text-sm font-medium text-gray-700">Adresse email</label>
+                                                          <div x-show="!editMode" x-text="profile.email" class="mt-1 block w-full"></div>
+                                                          <input x-show="editMode" type="email" x-model="profile.email" id="email" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                      </div>
+                                                      <div>
+                                                          <label for="phone" class="block text-sm font-medium text-gray-700">Numéro de téléphone</label>
+                                                          <div x-show="!editMode" x-text="profile.phone" class="mt-1 block w-full"></div>
+                                                          <input x-show="editMode" type="tel" x-model="profile.phone" id="phone" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                      </div>
+                                                      <div>
+                                                          <label for="birthdate" class="block text-sm font-medium text-gray-700">Date de naissance</label>
+                                                          <div x-show="!editMode" x-text="profile.birthdate" class="mt-1 block w-full"></div>
+                                                          <input x-show="editMode" type="date" x-model="profile.birthdate" id="birthdate" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                      </div>
+                                                      <div>
+                                                          <label for="address" class="block text-sm font-medium text-gray-700">Adresse postale</label>
+                                                          <div x-show="!editMode" x-text="profile.address" class="mt-1 block w-full"></div>
+                                                          <input x-show="editMode" type="text" x-model="profile.address" id="address" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <!-- Détails professionnels -->
+                                              <div>
+                                                  <h2 class="text-xl font-semibold mb-4">Détails professionnels</h2>
+                                                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                      <div>
+                                                          <label for="position" class="block text-sm font-medium text-gray-700">Poste / Titre</label>
+                                                          <div x-show="!editMode" x-text="profile.position" class="mt-1 block w-full"></div>
+                                                          <input x-show="editMode" type="text" x-model="profile.position" id="position" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                      </div>
+                                                      <div>
+                                                          <label for="department" class="block text-sm font-medium text-gray-700">Département / Service</label>
+                                                          <div x-show="!editMode" x-text="profile.department" class="mt-1 block w-full"></div>
+                                                          <input x-show="editMode" type="text" x-model="profile.department" id="department" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                      </div>
+                                                      <div>
+                                                          <label for="company" class="block text-sm font-medium text-gray-700">Nom de l'entreprise</label>
+                                                          <div x-show="!editMode" x-text="profile.company" class="mt-1 block w-full"></div>
+                                                          <input x-show="editMode" type="text" x-model="profile.company" id="company" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                      </div>
+                                                      <div>
+                                                          <label for="work-address" class="block text-sm font-medium text-gray-700">Adresse professionnelle</label>
+                                                          <div x-show="!editMode" x-text="profile.workAddress" class="mt-1 block w-full"></div>
+                                                          <input x-show="editMode" type="text" x-model="profile.workAddress" id="work-address" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                      </div>
+                                                      <div>
+                                                          <label for="work-phone" class="block text-sm font-medium text-gray-700">Numéro de téléphone professionnel</label>
+                                                          <div x-show="!editMode" x-text="profile.workPhone" class="mt-1 block w-full"></div>
+                                                          <input x-show="editMode" type="tel" x-model="profile.workPhone" id="work-phone" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <!-- Photo de profil -->
+                                              <div>
+                                                  <h2 class="text-xl font-semibold mb-4">Photo de profil</h2>
+                                                  <div class="flex items-center">
+                                                      <img class="h-16 w-16 rounded-full object-cover" src="https://via.placeholder.com/150" alt="Photo de profil">
+                                                      <div class="ml-4">
+                                                          <input type="file" id="profile-photo" class="mt-1 block w-full text-sm text-gray-500" x-show="editMode">
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="pt-5">
+                                                  <button type="button" @click="editMode = !editMode" x-text="editMode ? 'Enregistrer' : 'Modifier'" class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"></button>
+                                              </div>
+                                          </form>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div x-data="{ open: false }">
+                                <button @click="open = !open" 
+                                        class="w-full flex justify-between items-center px-4 py-2 bg-gray-50 shadow-sm rounded-lg">
+                                    <span>Sécurité</span>
+                                </button>
+                                <div x-show="open" x-transition class="mt-2 ml-4">
+                                    <!-- Content for Sécurité -->
+                                    <div class="p-4 bg-white shadow-sm rounded-lg">
+                                        <p>Paramètres de sécurité, changement de mot de passe, etc.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }">
+                        <button @click="open = !open" 
+                                class="w-full flex justify-between items-center px-4 py-2 bg-white shadow-sm rounded-lg">
+                            <span>Paramètres de langue</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition class="mt-2 ml-4">
+                            <!-- Content for Language -->
+                            <div class="p-4 bg-white shadow-sm rounded-lg">
+                                <p>Choix de la langue préférée.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }">
+                        <button @click="open = !open" 
+                                class="w-full flex justify-between items-center px-4 py-2 bg-white shadow-sm rounded-lg">
+                            <span>Historique d'audit</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition class="mt-2 ml-4">
+                            <!-- Content for Audit History -->
+                            <div class="p-4 bg-white shadow-sm rounded-lg">
+                                <p>Liste des audits précédents, détails et résultats.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }">
+                        <button @click="open = !open" 
+                                class="w-full flex justify-between items-center px-4 py-2 bg-white shadow-sm rounded-lg">
+                            <span>Exporter les données</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition class="mt-2 ml-4">
+                            <!-- Content for Export Data -->
+                            <div class="p-4 bg-white shadow-sm rounded-lg">
+                                <p>Options pour exporter les données utilisateur et les rapports d'audit.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             </main>
