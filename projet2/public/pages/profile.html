@@ -1158,17 +1158,42 @@
             <main>
               <div class="Conteneur">
 
-                <div class="personal-info">
-                   <h2>Informations Personnelles</h2>
-                      <ul>
-                         <li><strong>Nom d'utilisateur :</strong> JohnDoe</li>
-                         <li><strong>Adresse e-mail :</strong> john.doe@example.com</li>
-                         <li><strong>Entreprise :</strong> ABC Company</li>
-                         <li><strong>Poste :</strong> Responsable de la sécurité</li>
-                         <li><strong>Adresse :</strong> 123 Rue Principale, Ville, Pays</li>
-                         <li><strong>Téléphone :</strong> +123 456 7890</li>
-                        </ul>
-                  </div>
+                <h1 class="text-3xl font-bold mb-8">Votre Profil</h1>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <!-- Informations Personnelles -->
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-2">Informations Personnelles</h2>
+                <div>
+                    <label for="full-name" class="block text-sm font-medium text-gray-700">Nom complet</label>
+                    <p id="full-name" class="mt-1 text-sm text-gray-900">John Doe</p>
+                </div>
+                <div class="mt-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Adresse e-mail</label>
+                    <p id="email" class="mt-1 text-sm text-gray-900">john.doe@example.com</p>
+                </div>
+            </div>
+            <!-- Informations du Compte -->
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-2">Informations du Compte</h2>
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-700">Nom d'utilisateur</label>
+                    <p id="username" class="mt-1 text-sm text-gray-900">johndoe123</p>
+                </div>
+                <div class="mt-4">
+                    <label for="registration-date" class="block text-sm font-medium text-gray-700">Date d'inscription</label>
+                    <p id="registration-date" class="mt-1 text-sm text-gray-900">01/01/2024</p>
+                </div>
+            </div>
+            <!-- Photo de Profil -->
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-2">Photo de Profil</h2>
+                <img src="placeholder.jpg" alt="Photo de profil" class="w-24 h-24 rounded-full">
+            </div>
+            <!-- Bouton Modifier le Profil -->
+            <div class="mt-8">
+                <a href="page-parametre.html" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Modifier le Profil</a>
+            </div>
+        </div>
               </div>
             </main>
           </div>
