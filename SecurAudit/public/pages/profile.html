@@ -536,7 +536,7 @@
                         Parametre
                     </a>
                     <a
-                      href="#"
+                    href="../ressources/authentification/login.html"
                       role="menuitem"
                       class="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
                     >
@@ -720,7 +720,7 @@
                       Parametre
                     </a>
                     <a
-                      href="#"
+                    href="../ressources/authentification/login.html"
                       role="menuitem"
                       class="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
                     >
@@ -1154,65 +1154,49 @@
           </header>
 
           <!-- Main content -->
-          <div class="flex-1 h-full overflow-x-hidden overflow-y-auto">
+          <div class="flex items-center justify-center flex-1 h-full p-4">
             <main>
+              <div class="Conteneur">
 
-              <div class="colonne grid grid-cols-1 gap-8 p-4 lg:grid-cols-2 xl:grid-cols-4dark:bg-dark">
-
-                <div class="colonne-1 dark:border-primary-darker dark:bg-darker bg-white">
-                  <h1 class="grand">Grand titre</h1>
-                <p class="paragraphe">
-                  Les petites entreprises font face à un double défi en matière de sécurité informatique : d'une part, elles sont souvent peu conscientes des menaces qui pèsent sur leurs systèmes, et d'autre part, elles disposent de ressources limitées pour investir dans des solutions de sécurité coûteuses. Cette réalité expose ces entreprises à des risques considérables, car les cyberattaquants ciblent souvent les systèmes vulnérables pour accéder à des données sensibles. Face à cette problématique, trouver des solutions abordables et efficaces pour assurer la sécurité des données devient une priorité cruciale. Dans ce contexte, les audits de sécurité informatique se présentent comme une réponse viable, offrant aux petites entreprises la possibilité d'évaluer leurs systèmes, de détecter les failles potentielles et de mettre en place des mesures de protection adaptées, le tout à un coût raisonnable.
-                </p>
-                <div class="contvid">
-                  <video src="../ressources/videoplayback.mp4" controls  class="clas" ></video>
+                <h1 class="text-3xl font-bold mb-8">Votre Profil</h1>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <!-- Informations Personnelles -->
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-2">Informations Personnelles</h2>
+                <div>
+                    <label for="full-name" class="block text-sm font-medium text-gray-700">Nom complet</label>
+                    <p id="full-name" class="mt-1 text-sm text-gray-900">John Doe</p>
                 </div>
-                <h1 class="grand">Tableau de Bord de Gestion des Vulnérabilités</h1>
-                
-                  <p class="paragraphe">
-                    Notre tableau de bord offre une vue d'ensemble de notre environnement informatique, avec des statistiques clés sur les systèmes analysés, les vulnérabilités détectées et la conformité aux réglementations. Il permet des analyses temporelles pour identifier les tendances et les périodes de risque. Les visualisations claires facilitent la prise de décision quant à la gestion des risques et l'allocation des ressources. La surveillance du trafic réseau en temps réel aide à détecter les anomalies, tandis que l'évolution de l'utilisation guide nos stratégies de développement. C'est un outil essentiel pour assurer la sécurité de notre infrastructure informatique.
-                  </p>
+                <div class="mt-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Adresse e-mail</label>
+                    <p id="email" class="mt-1 text-sm text-gray-900">john.doe@example.com</p>
+                </div>
+            </div>
+            <!-- Informations du Compte -->
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-2">Informations du Compte</h2>
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-700">Nom d'utilisateur</label>
+                    <p id="username" class="mt-1 text-sm text-gray-900">johndoe123</p>
+                </div>
+                <div class="mt-4">
+                    <label for="registration-date" class="block text-sm font-medium text-gray-700">Date d'inscription</label>
+                    <p id="registration-date" class="mt-1 text-sm text-gray-900">01/01/2024</p>
+                </div>
+            </div>
+            <!-- Photo de Profil -->
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-2">Photo de Profil</h2>
+                <img src="placeholder.jpg" alt="Photo de profil" class="w-24 h-24 rounded-full">
+            </div>
+            <!-- Bouton Modifier le Profil -->
+            <div class="mt-8">
+                <a href="page-parametre.html" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Modifier le Profil</a>
+            </div>
+        </div>
               </div>
-  
-                <div class="colonne-2 dark:border-primary-darker dark:bg-darker bg-white">
-                  <h1 class="grand2">tutoriel</h1>
-                  <p class="tuto">
-                    Bienvenue dans notre tutoriel sur l'utilisation du tableau de bord de gestion des vulnérabilités, un outil essentiel pour assurer la sécurité de notre infrastructure informatique. Ce tableau de bord offre une gamme de fonctionnalités puissantes pour surveiller, évaluer et gérer les vulnérabilités susceptibles de compromettre la sécurité de notre système.
-                  </p>
-                  <p class="tuto">
-                    Lorsque vous accédez au tableau de bord, la première chose que vous remarquerez est la vue générale. Cette section fournit un aperçu complet des statistiques clés, telles que le nombre total de systèmes analysés, le nombre de vulnérabilités identifiées et l'état de conformité aux réglementations en vigueur. Cela vous permet d'avoir une vision d'ensemble de la santé de notre système et des domaines qui pourraient nécessiter une attention particulière.
-                  </p>
-                  <p class="tuto">
-                    Ensuite, dirigez-vous vers la section "Analyse Temporelle". Ici, vous pouvez explorer l'évolution des vulnérabilités au fil du temps. Utilisez les filtres disponibles pour sélectionner la période qui vous intéresse, que ce soit par jour, par mois ou par année. Le graphique en barres verticales vous permet de visualiser clairement le nombre de vulnérabilités détectées sur la période sélectionnée, vous aidant ainsi à identifier les tendances et les fluctuations.
-                  </p>
-                  <p class="tuto">
-                    Pour une analyse plus approfondie des risques, rendez-vous dans la section "Gestion des Risques". Ce diagramme circulaire vous permet de voir les pourcentages de risque ou de dommage du réseau. En utilisant les options de filtrage, vous pouvez affiner votre analyse pour examiner les données par heure, jour, mois ou année. Cela vous donne un aperçu précieux des zones présentant un risque élevé, vous permettant de prendre des mesures préventives appropriées.
-                  </p>
-                  <p class="tuto">
-                    Dans la section "Analyse Thématique", vous pouvez explorer les types de vulnérabilités détectées. Le graphique en barres horizontales classe les vulnérabilités selon une échelle prédéfinie, vous permettant ainsi de cibler les menaces les plus critiques pour notre infrastructure. Cela vous aide à hiérarchiser les actions correctives et à allouer efficacement les ressources de sécurité.
-                  </p>
-                  <p class="tuto">
-                    La surveillance du trafic réseau est également essentielle pour prévenir les cyberattaques. Dans la section "Surveillance du Trafic", vous pouvez observer les modèles de trafic en temps réel. Le graphique en barres verticales vous permet de détecter les anomalies de trafic qui pourraient indiquer une activité suspecte. Cela vous permet de réagir rapidement pour prévenir les incidents de sécurité et protéger notre infrastructure.
-                  </p>
-                  <p class="tuto">
-                    Enfin, dans la section "Évolution de l'Utilisation", suivez le nombre d'utilisateurs actifs de notre système au fil du temps. Cette courbe vous fournit des informations précieuses sur la croissance de notre plateforme et peut aider à anticiper les besoins en infrastructure et en ressources.
-                  </p>
-                  <p class="tuto">
-                    N'oubliez pas d'explorer les différents menus et sous-menus de la barre de navigation pour accéder à d'autres fonctionnalités telles que les rapports détaillés, les politiques de conformité et le support technique. Ce tableau de bord est un outil puissant pour renforcer la sécurité de notre infrastructure informatique, et nous espérons que ce tutoriel vous aidera à en tirer le meilleur parti. Si vous avez des questions ou des préoccupations, n'hésitez pas à contacter l'équipe de support technique.
-                  </p>
-                </div>
-
-              </div>              
-              
             </main>
-            
           </div>
-          <footer
-            class="flex items-center justify-between p-4 bg-white border-t dark:bg-darker dark:border-primary-darker foot"
-          >
-            <div>SecurAudit &copy; 2024</div>
-            
-          </footer>
         </div>
 
         <!-- Panels -->
@@ -1564,97 +1548,6 @@
       </div>
     </div>
     <!-- All javascript code in this project for now is just for demo DON'T RELY ON IT  -->
-    <script>
-      const setup = () => {
-        const getTheme = () => {
-          if (window.localStorage.getItem('dark')) {
-            return JSON.parse(window.localStorage.getItem('dark'))
-          }
-          return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-        }
-
-        const setTheme = (value) => {
-          window.localStorage.setItem('dark', value)
-        }
-
-        const getColor = () => {
-          if (window.localStorage.getItem('color')) {
-            return window.localStorage.getItem('color')
-          }
-          return 'cyan'
-        }
-
-        const setColors = (color) => {
-          const root = document.documentElement
-          root.style.setProperty('--color-primary', `var(--color-${color})`)
-          root.style.setProperty('--color-primary-50', `var(--color-${color}-50)`)
-          root.style.setProperty('--color-primary-100', `var(--color-${color}-100)`)
-          root.style.setProperty('--color-primary-light', `var(--color-${color}-light)`)
-          root.style.setProperty('--color-primary-lighter', `var(--color-${color}-lighter)`)
-          root.style.setProperty('--color-primary-dark', `var(--color-${color}-dark)`)
-          root.style.setProperty('--color-primary-darker', `var(--color-${color}-darker)`)
-          this.selectedColor = color
-          window.localStorage.setItem('color', color)
-        }
-
-        return {
-          loading: true,
-          isDark: getTheme(),
-          color: getColor(),
-          selectedColor: 'cyan',
-          toggleTheme() {
-            this.isDark = !this.isDark
-            setTheme(this.isDark)
-          },
-          setLightTheme() {
-            this.isDark = false
-            setTheme(this.isDark)
-          },
-          setDarkTheme() {
-            this.isDark = true
-            setTheme(this.isDark)
-          },
-          setColors,
-          toggleSidbarMenu() {
-            this.isSidebarOpen = !this.isSidebarOpen
-          },
-          isSettingsPanelOpen: false,
-          openSettingsPanel() {
-            this.isSettingsPanelOpen = true
-            this.$nextTick(() => {
-              this.$refs.settingsPanel.focus()
-            })
-          },
-          isNotificationsPanelOpen: false,
-          openNotificationsPanel() {
-            this.isNotificationsPanelOpen = true
-            this.$nextTick(() => {
-              this.$refs.notificationsPanel.focus()
-            })
-          },
-          isSearchPanelOpen: false,
-          openSearchPanel() {
-            this.isSearchPanelOpen = true
-            this.$nextTick(() => {
-              this.$refs.searchInput.focus()
-            })
-          },
-          isMobileSubMenuOpen: false,
-          openMobileSubMenu() {
-            this.isMobileSubMenuOpen = true
-            this.$nextTick(() => {
-              this.$refs.mobileSubMenu.focus()
-            })
-          },
-          isMobileMainMenuOpen: false,
-          openMobileMainMenu() {
-            this.isMobileMainMenuOpen = true
-            this.$nextTick(() => {
-              this.$refs.mobileMainMenu.focus()
-            })
-          },
-        }
-      }
-    </script>
+    <script src="../build/js/canva.js"></script>
   </body>
 </html>

@@ -8,6 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="../build/css/tailwind.css" />
     <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.5.x/dist/component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
@@ -77,7 +78,7 @@
                   <a
                     href="../index.html"
                     role="menuitem"
-                    class="block p-2 text-sm text-gray-700 transition-colors duration-200 rounded-md dark:text-light dark:hover:text-light hover:text-gray-700"
+                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
                   >
                     Tableau de bord
                   </a>
@@ -141,7 +142,7 @@
                   <a
                     href="analyser.html"
                     role="menuitem"
-                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
                   >
                     Analyser
                   </a>
@@ -206,7 +207,7 @@
                   <a
                     href="rapports.html"
                     role="menuitem"
-                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
                   >
                     Rapports
                   </a>
@@ -272,14 +273,14 @@
                   <a
                     href="supports.html"
                     role="menuitem"
-                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
                   >
                     Supports
                   </a>
                   <a
                     href="aides.html"
                     role="menuitem"
-                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
                   >
                     Aides
                   </a>
@@ -344,7 +345,7 @@
                 href="#"
                 class="inline-block text-2xl font-bold tracking-wider uppercase text-primary-dark dark:text-light"
               >
-                K-WD
+                SecurAudit
               </a>
 
               <!-- Mobile sub menu button -->
@@ -536,7 +537,7 @@
                         Parametre
                     </a>
                     <a
-                      href="#"
+                    href="../ressources/authentification/login.html"
                       role="menuitem"
                       class="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
                     >
@@ -720,7 +721,7 @@
                       Parametre
                     </a>
                     <a
-                      href="#"
+                    href="../ressources/authentification/login.html"
                       role="menuitem"
                       class="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
                     >
@@ -1156,49 +1157,39 @@
           <!-- Main content -->
           <div class="flex items-center justify-center flex-1 h-full p-4">
             <main>
-              <div class="Conteneur">
-
-                <h1 class="text-3xl font-bold mb-8">Votre Profil</h1>
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <!-- Informations Personnelles -->
-            <div class="mb-6">
-                <h2 class="text-xl font-semibold mb-2">Informations Personnelles</h2>
-                <div>
-                    <label for="full-name" class="block text-sm font-medium text-gray-700">Nom complet</label>
-                    <p id="full-name" class="mt-1 text-sm text-gray-900">John Doe</p>
+              <div class="politiqu  dark:bg-dark">
+                <h1 class="sec">Assurez la sécurité de vos données avec notre politique dédiée</h1>
+                <p class="pol">
+                  En accédant à notre politique de sécurité, vous découvrirez les directives précises pour protéger vos informations sensibles et préserver vos activités numériques. En adoptant nos mesures de protection, vous contribuez activement à renforcer notre partenariat pour garantir un environnement numérique sûr et fiable.
+                </p>
+                <div class="datemiseajour">
+                  <div id="lastUpdated"></div>
                 </div>
-                <div class="mt-4">
-                    <label for="email" class="block text-sm font-medium text-gray-700">Adresse e-mail</label>
-                    <p id="email" class="mt-1 text-sm text-gray-900">john.doe@example.com</p>
+                <div class="child  dark:border-primary-darker dark:bg-darker bg-white">
+                  <embed src="../ressources/CURICULUM VITAE.pdf" type="application/pdf" width="100%" height="600px">
                 </div>
-            </div>
-            <!-- Informations du Compte -->
-            <div class="mb-6">
-                <h2 class="text-xl font-semibold mb-2">Informations du Compte</h2>
-                <div>
-                    <label for="username" class="block text-sm font-medium text-gray-700">Nom d'utilisateur</label>
-                    <p id="username" class="mt-1 text-sm text-gray-900">johndoe123</p>
-                </div>
-                <div class="mt-4">
-                    <label for="registration-date" class="block text-sm font-medium text-gray-700">Date d'inscription</label>
-                    <p id="registration-date" class="mt-1 text-sm text-gray-900">01/01/2024</p>
-                </div>
-            </div>
-            <!-- Photo de Profil -->
-            <div class="mb-6">
-                <h2 class="text-xl font-semibold mb-2">Photo de Profil</h2>
-                <img src="placeholder.jpg" alt="Photo de profil" class="w-24 h-24 rounded-full">
-            </div>
-            <!-- Bouton Modifier le Profil -->
-            <div class="mt-8">
-                <a href="page-parametre.html" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Modifier le Profil</a>
-            </div>
-        </div>
               </div>
             </main>
           </div>
+          <div class="fixed bottom-5 right-5">
+            <button aria-hidden="true" class="p-2 transition-colors duration-200 rounded-full shadow-md bg-primary hover:bg-primary-darker focus:outline-none focus:ring focus:ring-primary " id="updateButton">
+             
+              <span class=" mise material-symbols-outlined">
+                autorenew
+                </span>
+                
+            
+            </button>
+          </div>
+          <footer
+          class=" pied flex items-center justify-between p-4 bg-white border-t dark:bg-darker dark:border-primary-darker"
+        >
+          <div>SecurAudit &copy; 2024</div>
+          
+        </footer>
         </div>
-
+        <!-- Main footer -->
+       
         <!-- Panels -->
 
         <!-- Settings Panel -->
@@ -1548,6 +1539,7 @@
       </div>
     </div>
     <!-- All javascript code in this project for now is just for demo DON'T RELY ON IT  -->
+    <script src="../build/js/update.js"></script>
     <script src="../build/js/canva.js"></script>
   </body>
 </html>

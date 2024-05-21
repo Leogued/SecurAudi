@@ -2109,6 +2109,63 @@ background-color: #090909;}
 .foot{
   margin-top: 10px;
 }
+.para{
+  width: 980px;
+}
+.taille{
+  height: 63px;
+}
+.hauteur{
+  height: 300px;
+}
+.high{
+  margin-top: 100%;
+}
+.regle{
+  width: 600px;
+  margin-left: 155px;
+}
+.espace{
+  margin-top: 15px;
+  margin-left: 35px;
+}
+.espace1{
+  margin-top: 15px;
+  margin-left: 150px;
+  margin-right: -217px;
+  width: 300px;
+}
+input{
+  height: 30px;
+}
+.pass{
+  display: block;
+  width: 600px;
+  margin-left: 170px;
+}
+.actuel{
+  margin-top: -40px;
+}
+.actuel2{
+  margin-top: 15px;
+}
+.lang{
+  margin-top: 40px;
+  margin-bottom: 21px;
+}
+.buttpose{
+  margin-top: 15px;
+  width: 100px;
+}
+select , option {
+  height: 30px;
+}
+.tab{
+  width: 100%;
+}
+.boug{
+  margin-left: 35%;
+}
 @media (min-width: 640px) {
   .sm\:max-w-md {
     max-width: 28rem;
