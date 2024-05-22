@@ -2024,6 +2024,49 @@ background-color: #090909;}
   'opsz' 24
 }
 
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: white; /* Ajoutez une couleur de fond pour éviter la superposition */
+  z-index: 10;
+  padding: 10px 0; /* Ajustez le padding selon vos besoins */
+}
+
+#main-title {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 10px;
+  z-index: 10;
+}
+
+.menu-item, .submenu-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.toggle-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.panel {
+  display: none;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.panel.open {
+  display: block;
+}
+
 .colonne{
   
   position: relative;
@@ -2119,7 +2162,7 @@ background-color: #090909;}
   height: 300px;
 }
 .high{
-  margin-top: 100%;
+  margin-top: 0;
 }
 .regle{
   width: 600px;
@@ -2166,6 +2209,11 @@ select , option {
 .boug{
   margin-left: 35%;
 }
+
+.bim{
+  z-index: 0;
+}
+
 @media (min-width: 640px) {
   .sm\:max-w-md {
     max-width: 28rem;

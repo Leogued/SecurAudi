@@ -7,7 +7,7 @@ var myChart = new Chart(ctx, {
             label: 'Number of Vulnerabilities',
             data: [50, 60, 70, 65, 80, 75, 90, 55, 72, 68], // Données de vulnérabilité
             backgroundColor: '#473fe185',
-            borderColor: 'rgba(54, 162, 235, 1)',
+            borderColor: '#fff',
             borderWidth: 1
         }]
     },

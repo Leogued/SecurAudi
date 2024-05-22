@@ -380,7 +380,7 @@
                     class="w-12 h-6 transition rounded-full outline-none bg-primary-100 dark:bg-primary-lighter"
                   ></div>
                   <div
-                    class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-150 transform scale-110 rounded-full shadow-sm"
+                    class="bim absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-150 transform scale-110 rounded-full shadow-sm"
                     :class="{ 'translate-x-0 -translate-y-px  bg-white text-primary-dark': !isDark, 'translate-x-6 text-primary-100 bg-primary-darker': isDark }"
                   >
                     <svg
@@ -439,28 +439,7 @@
                   </svg>
                 </button>
 
-                <!-- Search button -->
-                <button
-                  @click="openSearchPanel"
-                  class="p-2 transition-colors duration-200 rounded-full text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker"
-                >
-                  <span class="sr-only">Open search panel</span>
-                  <svg
-                    class="w-7 h-7"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
-                </button>
+                
 
                 <!-- Settings button -->
                 <button
@@ -626,28 +605,7 @@
                     </svg>
                   </button>
 
-                  <!-- Search button -->
-                  <button
-                    @click="openSearchPanel(); $nextTick(() => { $refs.searchInput.focus(); setTimeout(() => {isMobileSubMenuOpen= false}, 100) })"
-                    class="p-2 transition-colors duration-200 rounded-full text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker"
-                  >
-                    <span class="sr-only">Open search panel</span>
-                    <svg
-                      class="w-7 h-7"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                      />
-                    </svg>
-                  </button>
+                  
 
                   <!-- Settings button -->
                   <button
@@ -1155,186 +1113,206 @@
           </header>
 
           <!-- Main content -->
-          <div class="flex items-center justify-center flex-1 h-full p-4">
+          <div class="flex items-top justify-center flex-1 h-full p-4">
             <main>
               <div class="max-w-7xl mx-auto py-10 px-6">
-                <h1 class="text-3xl font-bold mb-8 high">Paramètres</h1>
-                <!-- Menu Items -->
-                <div class="space-y-4 text-gray-400 rounded-md dark:text-gray-400 para">
-                    <div x-data="{ open: false }">
-                        <button @click="open = !open" 
-                                class="w-full flex justify-between items-center px-4 py-2 bg-white rounded-md dark:bg-darker shadow-sm rounded-lg taille">
-                            <span class="text-primary-dark dark:text-light">Paramètres du compte</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div x-show="open" x-transition class="mt-2 ml-4 space-y-2">
-                            <div x-data="{ open: false }">
-                                <button @click="open = !open" 
-                                        class="w-full flex justify-between items-center px-4 py-2 bg-gray-50 shadow-sm rounded-lg hover:bg-primary-100 dark:hover:bg-primary bg-primary-100 dark:bg-primary taille ">
-                                    <span class="text-primary-dark dark:text-light">Gestion</span>
-                                </button>
-                                <div x-show="open" x-transition class="mt-2 ml-4">
-                                    <!-- Content for Gestion -->
-                                    <div class="p-4 bg-white  dark:bg-darker shadow-sm  rounded-md text-primary-dark dark:text-light">
-                                      <h1 class="text-3xl font-bold mb-8 text-primary-dark dark:text-light">Gestion du Profil</h1>
-                                      <div class="bg-white p-6 rounded-lg shadow-lg " x-data="{ editMode: false, profile: { firstName: 'John', lastName: 'Doe', email: 'john.doe@example.com', phone: '1234567890', birthdate: '1980-01-01', address: '123 Main St', position: 'Manager', department: 'IT', company: 'Acme Corp', workAddress: '456 Business Rd', workPhone: '0987654321' } }">
-                                          <form @submit.prevent="editMode = false" class="space-y-6 bg-white rounded-md dark:bg-darker shadow-sm rounded-lg">
-                                              <!-- Informations personnelles -->
-                                              <div>
-                                                  <h2 class="text-xl font-semibold mb-4">Informations personnelles</h2>
-                                                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 regle">
-                                                      <div class="espace">
-                                                          <label for="first-name" class="block text-sm font-medium text-gray-700">Prénom</label>
-                                                          <div x-show="!editMode" x-text="profile.firstName" class="mt-1 block w-full"></div>
-                                                          <input x-show="editMode" type="text" x-model="profile.firstName" id="first-name" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                      </div>
-                                                      <div class="espace">
-                                                          <label for="last-name" class="block text-sm font-medium text-gray-700">Nom de famille</label>
-                                                          <div x-show="!editMode" x-text="profile.lastName" class="mt-1 block w-full"></div>
-                                                          <input x-show="editMode" type="text" x-model="profile.lastName" id="last-name" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                      </div>
-                                                      <div class="espace">
-                                                          <label for="email" class="block text-sm font-medium text-gray-700">Adresse email</label>
-                                                          <div x-show="!editMode" x-text="profile.email" class="mt-1 block w-full"></div>
-                                                          <input x-show="editMode" type="email" x-model="profile.email" id="email" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                      </div>
-                                                      <div class="espace">
-                                                          <label for="phone" class="block text-sm font-medium text-gray-700">Numéro de téléphone</label>
-                                                          <div x-show="!editMode" x-text="profile.phone" class="mt-1 block w-full"></div>
-                                                          <input x-show="editMode" type="tel" x-model="profile.phone" id="phone" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                      </div>
-                                                      <div class="espace">
-                                                          <label for="birthdate" class="block text-sm font-medium text-gray-700">Date de naissance</label>
-                                                          <div x-show="!editMode" x-text="profile.birthdate" class="mt-1 block w-full"></div>
-                                                          <input x-show="editMode" type="date" x-model="profile.birthdate" id="birthdate" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                      </div>
-                                                      <div class="espace">
-                                                          <label for="address" class="block text-sm font-medium text-gray-700">Adresse postale</label>
-                                                          <div x-show="!editMode" x-text="profile.address" class="mt-1 block w-full"></div>
-                                                          <input x-show="editMode" type="text" x-model="profile.address" id="address" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                              <!-- Détails professionnels -->
-                                              <div>
-                                                  <h2 class="text-xl font-semibold mb-4">Détails professionnels</h2>
-                                                  <div class="grid grid-cols-1 md:grid-cols-2 text-primary-dark dark:text-light rounded-md gap-6 regle">
-                                                    <div class="espace">
-                                                          <label for="position" class="block text-sm font-medium text-gray-700">Poste / Titre</label>
-                                                          <div x-show="!editMode" x-text="profile.position" class="mt-1 block w-full"></div>
-                                                          <input x-show="editMode" type="text" x-model="profile.position" id="position" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                      </div>
-                                                      <div class="espace">
-                                                          <label for="department" class="block text-sm font-medium text-gray-700">Département / Service</label>
-                                                          <div x-show="!editMode" x-text="profile.department" class="mt-1 block w-full"></div>
-                                                          <input x-show="editMode" type="text" x-model="profile.department" id="department" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                      </div>
-                                                      <div class="espace">
-                                                          <label for="company" class="block text-sm font-medium text-gray-700">Nom de l'entreprise</label>
-                                                          <div x-show="!editMode" x-text="profile.company" class="mt-1 block w-full"></div>
-                                                          <input x-show="editMode" type="text" x-model="profile.company" id="company" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                      </div>
-                                                      <div class="espace">
-                                                          <label for="work-address" class="block text-sm font-medium text-gray-700">Adresse professionnelle</label>
-                                                          <div x-show="!editMode" x-text="profile.workAddress" class="mt-1 block w-full"></div>
-                                                          <input x-show="editMode" type="text" x-model="profile.workAddress" id="work-address" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                      </div>
-                                                      <div class="espace1">
-                                                          <label for="work-phone" class="block text-sm font-medium text-gray-700">Numéro de téléphone professionnel</label>
-                                                          <div x-show="!editMode" x-text="profile.workPhone" class="mt-1 block w-full"></div>
-                                                          <input x-show="editMode" type="tel" x-model="profile.workPhone" id="work-phone" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                  <h1 class="text-3xl font-bold mb-8 high sticky-header bg-white bg-gray-100 dark:bg-dark ">Paramètres</h1>
+                  <!-- Menu Items -->
+                  <div class="space-y-4 text-gray-400 rounded-md dark:text-gray-400 para" x-data="{ 
+                      openAccountSettings: false, 
+                      openSecuritySettings: false, 
+                      openLanguageSettings: false, 
+                      openAuditHistory: false, 
+                      openExportData: false 
+                  }">
+                      <div>
+                          <button @click="openAccountSettings = !openAccountSettings" 
+                              class="w-full flex justify-between items-center px-4 py-2 bg-white rounded-md dark:bg-darker shadow-sm rounded-lg taille">
+                              <span class="text-primary-dark dark:text-light">Paramètres du compte</span>
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                              </svg>
+                          </button>
+                          <div x-show="openAccountSettings" x-transition class="mt-2 ml-4 space-y-2">
+                              <div x-data="{ open: false }">
+                                  <button @click="open = !open" 
+                                      class="w-full flex justify-between items-center px-4 py-2 bg-gray-50 shadow-sm rounded-lg hover:bg-primary-100 dark:hover:bg-primary bg-primary-100 dark:bg-primary taille">
+                                      <span class="text-primary-dark dark:text-light">Gestion</span>
+                                  </button>
+                                  <div x-show="open" x-transition class="mt-2 ml-4">
+                                      <!-- Content for Gestion -->
+                                      <div class="p-4 bg-white dark:bg-darker shadow-sm rounded-md text-primary-dark dark:text-light">
+                                          <h1 class="text-3xl font-bold mb-8 text-primary-dark dark:text-light">Gestion du Profil</h1>
+                                          <div class="bg-white p-6 rounded-lg shadow-lg" x-data="{ 
+                                              editMode: false, 
+                                              profile: { 
+                                                  firstName: 'John', 
+                                                  lastName: 'Doe', 
+                                                  email: 'john.doe@example.com', 
+                                                  phone: '1234567890', 
+                                                  birthdate: '1980-01-01', 
+                                                  address: '123 Main St', 
+                                                  position: 'Manager', 
+                                                  department: 'IT', 
+                                                  company: 'Acme Corp', 
+                                                  workAddress: '456 Business Rd', 
+                                                  workPhone: '0987654321' 
+                                              } 
+                                          }">
+                                              <form @submit.prevent="editMode = false" class="space-y-6 bg-white rounded-md dark:bg-darker shadow-sm rounded-lg">
+                                                  <!-- Informations personnelles -->
+                                                  <div>
+                                                      <h2 class="text-xl font-semibold mb-4">Informations personnelles</h2>
+                                                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 regle">
+                                                          <div class="espace">
+                                                              <label for="first-name" class="block text-sm font-medium text-gray-700">Prénom</label>
+                                                              <div x-show="!editMode" x-text="profile.firstName" class="mt-1 block w-full"></div>
+                                                              <input x-show="editMode" type="text" x-model="profile.firstName" id="first-name" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                          </div>
+                                                          <div class="espace">
+                                                              <label for="last-name" class="block text-sm font-medium text-gray-700">Nom de famille</label>
+                                                              <div x-show="!editMode" x-text="profile.lastName" class="mt-1 block w-full"></div>
+                                                              <input x-show="editMode" type="text" x-model="profile.lastName" id="last-name" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                          </div>
+                                                          <div class="espace">
+                                                              <label for="email" class="block text-sm font-medium text-gray-700">Adresse email</label>
+                                                              <div x-show="!editMode" x-text="profile.email" class="mt-1 block w-full"></div>
+                                                              <input x-show="editMode" type="email" x-model="profile.email" id="email" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                          </div>
+                                                          <div class="espace">
+                                                              <label for="phone" class="block text-sm font-medium text-gray-700">Numéro de téléphone</label>
+                                                              <div x-show="!editMode" x-text="profile.phone" class="mt-1 block w-full"></div>
+                                                              <input x-show="editMode" type="tel" x-model="profile.phone" id="phone" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                          </div>
+                                                          <div class="espace">
+                                                              <label for="birthdate" class="block text-sm font-medium text-gray-700">Date de naissance</label>
+                                                              <div x-show="!editMode" x-text="profile.birthdate" class="mt-1 block w-full"></div>
+                                                              <input x-show="editMode" type="date" x-model="profile.birthdate" id="birthdate" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                          </div>
+                                                          <div class="espace">
+                                                              <label for="address" class="block text-sm font-medium text-gray-700">Adresse personnelle</label>
+                                                              <div x-show="!editMode" x-text="profile.address" class="mt-1 block w-full"></div>
+                                                              <input x-show="editMode" type="text" x-model="profile.address" id="address" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                          </div>
                                                       </div>
                                                   </div>
-                                              </div>
-                                              <!-- Photo de profil -->
-                                              <div>
-                                                  <h2 class="text-xl font-semibold mb-4">Photo de profil</h2>
-                                                  <div class="flex items-center">
-                                                      <img class="h-16 w-16 rounded-full object-cover" src="https://via.placeholder.com/150" alt="Photo de profil">
-                                                      <div class="ml-4">
-                                                          <input type="file" id="profile-photo" class="mt-1 block w-full text-sm text-gray-500" x-show="editMode">
+                                                  <!-- Informations professionnelles -->
+                                                  <div>
+                                                      <h2 class="text-xl font-semibold mb-4">Informations professionnelles</h2>
+                                                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 regle">
+                                                          <div class="espace">
+                                                              <label for="position" class="block text-sm font-medium text-gray-700">Poste</label>
+                                                              <div x-show="!editMode" x-text="profile.position" class="mt-1 block w-full"></div>
+                                                              <input x-show="editMode" type="text" x-model="profile.position" id="position" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                          </div>
+                                                          <div class="espace">
+                                                              <label for="department" class="block text-sm font-medium text-gray-700">Département</label>
+                                                              <div x-show="!editMode" x-text="profile.department" class="mt-1 block w-full"></div>
+                                                              <input x-show="editMode" type="text" x-model="profile.department" id="department" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                          </div>
+                                                          <div class="espace">
+                                                              <label for="company" class="block text-sm font-medium text-gray-700">Société</label>
+                                                              <div x-show="!editMode" x-text="profile.company" class="mt-1 block w-full"></div>
+                                                              <input x-show="editMode" type="text" x-model="profile.company" id="company" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                          </div>
+                                                          <div class="espace">
+                                                              <label for="work-address" class="block text-sm font-medium text-gray-700">Adresse professionnelle</label>
+                                                              <div x-show="!editMode" x-text="profile.workAddress" class="mt-1 block w-full"></div>
+                                                              <input x-show="editMode" type="text" x-model="profile.workAddress" id="work-address" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                          </div>
+                                                          <div class="espace">
+                                                              <label for="work-phone" class="block text-sm font-medium text-gray-700">Numéro de téléphone professionnel</label>
+                                                              <div x-show="!editMode" x-text="profile.workPhone" class="mt-1 block w-full"></div>
+                                                              <input x-show="editMode" type="tel" x-model="profile.workPhone" id="work-phone" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                          </div>
                                                       </div>
                                                   </div>
-                                              </div>
-                                              <div class="pt-5">
-                                                  <button type="button" @click="editMode = !editMode" x-text="editMode ? 'Enregistrer' : 'Modifier'" class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"></button>
-                                              </div>
-                                          </form>
+                                                  <!-- Boutons -->
+                                                  <div class="flex justify-end">
+                                                      <button type="button" @click="editMode = !editMode" 
+                                                          class="py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                                          <span x-show="!editMode">Modifier</span>
+                                                          <span x-show="editMode">Sauvegarder</span>
+                                                      </button>
+                                                  </div>
+                                              </form>
+                                          </div>
                                       </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div x-data="{ open: false }">
-                                <button @click="open = !open" 
-                                        class="w-full flex justify-between items-center px-4 py-2 bg-gray-50 shadow-sm rounded-lg hover:bg-primary-100 dark:hover:bg-primary bg-primary-100 dark:bg-primary taille">
-                                    <span class=" text-primary-dark dark:text-light">Sécurité</span>
-                                </button>
-                                <div x-show="open" x-transition class="mt-2 ml-4">
-                                    <!-- Content for Sécurité -->
-                                    <div class="p-4 bg-white rounded-md dark:bg-darker shadow-sm rounded-lg">
-                                      <div class="max-w-7xl mx-auto py-10 px-6">
-                                        <div class="bg-white text-primary-dark dark:text-light p-6 rounded-lg shadow-lg" x-data="{ editPassword: false, editQuestions: false, security: { currentPassword: '', newPassword: '', confirmPassword: '', twoFactorEnabled: false, securityQuestion1: '', securityAnswer1: '', securityQuestion2: '', securityAnswer2: '' } }">
-                                            <form @submit.prevent class="space-y-6 bg-white rounded-md dark:bg-darker shadow-sm rounded-lg">
-                                                <!-- Changer le mot de passe -->
-                                                <div>
-                                                  <h2 class="text-xl font-semibold mb-4">Changer le mot de passe</h2>
-                                                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pass">
-                                                    <div class="actuel">
-                                                          <label for="current-password" class="block text-sm font-medium text-gray-700">Mot de passe actuel</label>
-                                                          <input type="password" x-model="security.currentPassword" id="current-password" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                  </div>
+                              </div>
+                              <div x-data="{ open: false }">
+                                  <button @click="open = !open" 
+                                      class="w-full flex justify-between items-center px-4 py-2 bg-gray-50 shadow-sm rounded-lg hover:bg-primary-100 dark:hover:bg-primary bg-primary-100 dark:bg-primary taille">
+                                      <span class="text-primary-dark dark:text-light">Sécurité</span>
+                                  </button>
+                                  <div x-show="open" x-transition class="mt-2 ml-4">
+                                      <!-- Content for Sécurité -->
+                                      <div class="p-4 bg-white dark:bg-darker shadow-sm rounded-md text-primary-dark dark:text-light">
+                                          <!-- Add your security content here -->
+                                          <div class="p-4 bg-white rounded-md dark:bg-darker shadow-sm rounded-lg">
+                                            <div class="max-w-7xl mx-auto py-10 px-6">
+                                              <div class="bg-white text-primary-dark dark:text-light p-6 rounded-lg shadow-lg" x-data="{ editPassword: false, editQuestions: false, security: { currentPassword: '', newPassword: '', confirmPassword: '', twoFactorEnabled: false, securityQuestion1: '', securityAnswer1: '', securityQuestion2: '', securityAnswer2: '' } }">
+                                                  <form @submit.prevent class="space-y-6 bg-white rounded-md dark:bg-darker shadow-sm rounded-lg">
+                                                      <!-- Changer le mot de passe -->
+                                                      <div>
+                                                        <h2 class="text-xl font-semibold mb-4">Changer le mot de passe</h2>
+                                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pass">
+                                                          <div class="actuel">
+                                                                <label for="current-password" class="block text-sm font-medium text-gray-700">Mot de passe actuel</label>
+                                                                <input type="password" x-model="security.currentPassword" id="current-password" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                            </div>
+                                                            <div class="actuel2">
+                                                                <label for="new-password" class="block text-sm font-medium text-gray-700">Nouveau mot de passe</label>
+                                                                <input type="password" x-model="security.newPassword" id="new-password" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                            </div>
+                                                            <div class="actuel2">
+                                                                <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirmer le nouveau mot de passe</label>
+                                                                <input type="password" x-model="security.confirmPassword" id="confirm-password" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                                            </div>
+                                                        </div>
+                                                        <div class="pt-5">
+                                                            <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Enregistrer</button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Message de confirmation -->
+                                                   
+                                                    
+                                                      <!-- Questions de sécurité -->
+                                                      <div>
+                                                          <h2 class="text-xl font-semibold mb-4">Questions de sécurité</h2>
+                                                          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pass">
+                                                              <div class=" actuel">
+                                                                  <label for="security-question-1" class="block text-sm font-medium text-gray-700">Question de sécurité 1</label>
+                                                                  <input type="text" x-model="security.securityQuestion1" id="security-question-1" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" :disabled="!editQuestions">
+                                                              </div>
+                                                              <div class="actuel2">
+                                                                  <label for="security-answer-1" class="block text-sm font-medium text-gray-700">Réponse</label>
+                                                                  <input type="text" x-model="security.securityAnswer1" id="security-answer-1" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" :disabled="!editQuestions">
+                                                              </div>
+                                                              <div class="actuel2">
+                                                                  <label for="security-question-2" class="block text-sm font-medium text-gray-700">Question de sécurité 2</label>
+                                                                  <input type="text" x-model="security.securityQuestion2" id="security-question-2" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" :disabled="!editQuestions">
+                                                              </div>
+                                                              <div class="actuel2">
+                                                                  <label for="security-answer-2" class="block text-sm font-medium text-gray-700">Réponse</label>
+                                                                  <input type="text" x-model="security.securityAnswer2" id="security-answer-2" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" :disabled="!editQuestions">
+                                                              </div>
+                                                          </div>
+                                                          <div class="pt-5 actuel2">
+                                                              <button type="button" @click="editQuestions = !editQuestions" x-text="editQuestions ? 'Enregistrer' : 'Modifier'" class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"></button>
+                                                          </div>
                                                       </div>
-                                                      <div class="actuel2">
-                                                          <label for="new-password" class="block text-sm font-medium text-gray-700">Nouveau mot de passe</label>
-                                                          <input type="password" x-model="security.newPassword" id="new-password" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                      </div>
-                                                      <div class="actuel2">
-                                                          <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirmer le nouveau mot de passe</label>
-                                                          <input type="password" x-model="security.confirmPassword" id="confirm-password" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                                      </div>
-                                                  </div>
-                                                  <div class="pt-5">
-                                                      <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Enregistrer</button>
-                                                  </div>
+                                                  </form>
                                               </div>
-                                              <!-- Message de confirmation -->
-                                             
-                                              
-                                                <!-- Questions de sécurité -->
-                                                <div>
-                                                    <h2 class="text-xl font-semibold mb-4">Questions de sécurité</h2>
-                                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pass">
-                                                        <div class=" actuel">
-                                                            <label for="security-question-1" class="block text-sm font-medium text-gray-700">Question de sécurité 1</label>
-                                                            <input type="text" x-model="security.securityQuestion1" id="security-question-1" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" :disabled="!editQuestions">
-                                                        </div>
-                                                        <div class="actuel2">
-                                                            <label for="security-answer-1" class="block text-sm font-medium text-gray-700">Réponse</label>
-                                                            <input type="text" x-model="security.securityAnswer1" id="security-answer-1" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" :disabled="!editQuestions">
-                                                        </div>
-                                                        <div class="actuel2">
-                                                            <label for="security-question-2" class="block text-sm font-medium text-gray-700">Question de sécurité 2</label>
-                                                            <input type="text" x-model="security.securityQuestion2" id="security-question-2" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" :disabled="!editQuestions">
-                                                        </div>
-                                                        <div class="actuel2">
-                                                            <label for="security-answer-2" class="block text-sm font-medium text-gray-700">Réponse</label>
-                                                            <input type="text" x-model="security.securityAnswer2" id="security-answer-2" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" :disabled="!editQuestions">
-                                                        </div>
-                                                    </div>
-                                                    <div class="pt-5 actuel2">
-                                                        <button type="button" @click="editQuestions = !editQuestions" x-text="editQuestions ? 'Enregistrer' : 'Modifier'" class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"></button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div x-data="{ open: false }">
+                                          </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- Add more sections here following the same pattern for each section -->
+                      <div x-data="{ open: false }">
                         <button @click="open = !open" 
                                 class="w-full flex justify-between items-center px-4 py-2 bg-white rounded-md dark:bg-darker shadow-sm rounded-lg taille">
                             <span class="text-primary-dark dark:text-light">Paramètres de langue</span>
@@ -1423,10 +1401,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            </main>
+                    </div>
+                  </div>
+              </div>
+          </main>
           </div>
+          
+          
         </div>
 
         <!-- Panels -->
@@ -1692,93 +1673,12 @@
           </div>
         </section>
 
-        <!-- Search panel -->
-        <!-- Backdrop -->
-        <div
-          x-transition:enter="transition duration-300 ease-in-out"
-          x-transition:enter-start="opacity-0"
-          x-transition:enter-end="opacity-100"
-          x-transition:leave="transition duration-300 ease-in-out"
-          x-transition:leave-start="opacity-100"
-          x-transition:leave-end="opacity-0"
-          x-show="isSearchPanelOpen"
-          @click="isSearchPanelOpen = false"
-          class="fixed inset-0 z-10 bg-primary-darker"
-          style="opacity: 0.5"
-          aria-hidden="ture"
-        ></div>
-        <!-- Panel -->
-        <section
-          x-transition:enter="transition duration-300 ease-in-out transform sm:duration-500"
-          x-transition:enter-start="-translate-x-full"
-          x-transition:enter-end="translate-x-0"
-          x-transition:leave="transition duration-300 ease-in-out transform sm:duration-500"
-          x-transition:leave-start="translate-x-0"
-          x-transition:leave-end="-translate-x-full"
-          x-show="isSearchPanelOpen"
-          @keydown.escape="isSearchPanelOpen = false"
-          class="fixed inset-y-0 z-20 w-full max-w-xs bg-white shadow-xl dark:bg-darker dark:text-light sm:max-w-md focus:outline-none"
-        >
-          <div class="absolute right-0 p-2 transform translate-x-full">
-            <!-- Close button -->
-            <button @click="isSearchPanelOpen = false" class="p-2 text-white rounded-md focus:outline-none focus:ring">
-              <svg
-                class="w-5 h-5"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-
-          <h2 class="sr-only">Search panel</h2>
-          <!-- Panel content -->
-          <div class="flex flex-col h-screen">
-            <!-- Panel header (Search input) -->
-            <div
-              class="relative flex-shrink-0 px-4 py-8 text-gray-400 border-b dark:border-primary-darker dark:focus-within:text-light focus-within:text-gray-700"
-            >
-              <span class="absolute inset-y-0 inline-flex items-center px-4">
-                <svg
-                  class="w-5 h-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </span>
-              <input
-                x-ref="searchInput"
-                type="text"
-                class="w-full py-2 pl-10 pr-4 border rounded-full dark:bg-dark dark:border-transparent dark:text-light focus:outline-none focus:ring"
-                placeholder="Search..."
-              />
-            </div>
-
-            <!-- Panel content (Search result) -->
-            <div class="flex-1 px-4 pb-4 space-y-4 overflow-y-hidden h hover:overflow-y-auto">
-              <h3 class="py-2 text-sm font-semibold text-gray-600 dark:text-light">History</h3>
-              <p class="px=4">Search resault</p>
-              <!--  -->
-              <!-- Search content -->
-              <!--  -->
-            </div>
-          </div>
-        </section>
+      
       </div>
     </div>
     <!-- All javascript code in this project for now is just for demo DON'T RELY ON IT  -->
     <script src="../build/js/script.js"></script>
     <script src="../build/js/canva.js"></script>
+    <script src="../build/js/parametre.js"></script>
   </body>
 </html>
