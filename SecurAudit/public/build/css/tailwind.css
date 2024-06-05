@@ -2081,6 +2081,13 @@ background-color: #090909;}
   width: 411%;
   height: fit-content;
 }
+.colonne-11{
+  border-radius: 6px;
+  height: fit-content;
+  position: relative;
+  padding: 10px;
+  text-align: justify;
+}
 .colonne-2{
   border-radius: 6px;
   max-width: 396px;

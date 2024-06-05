@@ -1,0 +1,103 @@
+.panel {
+    display: none; /* Le panneau est caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+.bul{
+    margin-top: 5%;
+    text-align: center;
+    margin-bottom: 5%;
+}
+.interligne{
+    line-height: 50px;
+    font-size: 20px;
+}
+.buttton{
+    border: solid 1px;
+}
+.form-group {
+    
+  }
+
+  .panel0{
+    width: 50%;
+    background: beige;
+    z-index: 10;
+    position: absolute;
+    padding: 10px; 
+    margin-top: 0.5%;
+    margin-left: 10%;
+  }
+
+.gran1{
+    width: 184%;
+    position: relative;
+    margin-left: 18%;
+    margin-right: 8%;
+}
+.gran2{
+    width: 184%;
+    position: relative;
+    margin-left: 15%;
+    margin-right: 8%;
+}
+.gran3{
+    width: 184%;
+    position: relative;
+    margin-left: 14%;
+    margin-right: 8%;
+}
+.gran4{
+    width: 184%;
+    position: relative;
+    margin-left: 19%;
+    margin-right: 8%;
+}
+.gran5{
+    width: 184%;
+    position: relative;
+    margin-left: 17%;
+    margin-right: 8%;
+}
+granx{
+    width: 184%;
+    position: relative;
+    margin-left: 17%;
+    margin-right: 8%;
+}
+.haut{
+    padding-top: 10px;
+
+}  
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+}
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }}
+    
