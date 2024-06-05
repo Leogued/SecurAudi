@@ -3,12 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>K-WD Dashboard | Blank Page</title>
+    <title>Evaluer</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../build/css/tailwind.css" />
+    <link rel="stylesheet" href="../build/css/evaluer.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.5.x/dist/component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
   </head>
@@ -26,7 +28,7 @@
         <!-- Sidebar -->
         <aside class="flex-shrink-0 hidden w-64 bg-white border-r dark:border-primary-darker dark:bg-darker md:block">
           <div class="flex flex-col h-full">
-            <!-- Sidebar links -->
+            <!-- Sidebar links --> 
             <nav aria-label="Main" class="flex-1 px-2 py-4 space-y-2 overflow-y-hidden hover:overflow-y-auto">
               <!-- Dashboards links -->
               <div x-data="{ isActive: true, open: true}">
@@ -1156,7 +1158,32 @@
           <!-- Main content -->
           <div class="flex items-center justify-center flex-1 h-full p-4">
             <main>
-              <h1 class="text-3xl font-semibold">Page content</h1>
+              
+              <div>
+                <h3 class="liste">Liste des vulnérabilités>
+                <div class="vulnerability carteA bg-white dark:bg-darker">
+                  <h3>Vulnérabilité A</h3>
+                  <p>Cette vulnérabilité expose le système à des attaques de type...</p>
+                  <p>Elle peut être exploitée en raison de...</p>
+              </div>
+              
+              <div class="vulnerability carteC bg-white dark:bg-darker">
+                  <h3>Vulnérabilité B</h3>
+                  <p>Cette vulnérabilité permet à un attaquant de...</p>
+                  <p>Elle est causée par...</p>
+              </div>
+              
+              <div class="vulnerability carteC bg-white dark:bg-darker">
+                  <h3>Vulnérabilité C</h3>
+                  <p>Cette vulnérabilité affecte la sécurité du système en raison de...</p>
+                  <p>Elle peut être corrigée en...</p>
+              </div>
+              <a class="lien" href="#">Voir plus</a>
+              </div>
+              
+              <div class="relative p-4 h-102">
+                <canvas id="doughnutChart"></canvas>
+              </div>
             </main>
           </div>
         </div>
@@ -1510,98 +1537,8 @@
       </div>
     </div>
     <!-- All javascript code in this project for now is just for demo DON'T RELY ON IT  -->
-    <script>
-      const setup = () => {
-        const getTheme = () => {
-          if (window.localStorage.getItem('dark')) {
-            return JSON.parse(window.localStorage.getItem('dark'))
-          }
-          return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-        }
-
-        const setTheme = (value) => {
-          window.localStorage.setItem('dark', value)
-        }
-
-        const getColor = () => {
-          if (window.localStorage.getItem('color')) {
-            return window.localStorage.getItem('color')
-          }
-          return 'cyan'
-        }
-
-        const setColors = (color) => {
-          const root = document.documentElement
-          root.style.setProperty('--color-primary', `var(--color-${color})`)
-          root.style.setProperty('--color-primary-50', `var(--color-${color}-50)`)
-          root.style.setProperty('--color-primary-100', `var(--color-${color}-100)`)
-          root.style.setProperty('--color-primary-light', `var(--color-${color}-light)`)
-          root.style.setProperty('--color-primary-lighter', `var(--color-${color}-lighter)`)
-          root.style.setProperty('--color-primary-dark', `var(--color-${color}-dark)`)
-          root.style.setProperty('--color-primary-darker', `var(--color-${color}-darker)`)
-          this.selectedColor = color
-          window.localStorage.setItem('color', color)
-        }
-
-        return {
-          loading: true,
-          isDark: getTheme(),
-          color: getColor(),
-          selectedColor: 'cyan',
-          toggleTheme() {
-            this.isDark = !this.isDark
-            setTheme(this.isDark)
-          },
-          setLightTheme() {
-            this.isDark = false
-            setTheme(this.isDark)
-          },
-          setDarkTheme() {
-            this.isDark = true
-            setTheme(this.isDark)
-          },
-          setColors,
-          toggleSidbarMenu() {
-            this.isSidebarOpen = !this.isSidebarOpen
-          },
-          isSettingsPanelOpen: false,
-          openSettingsPanel() {
-            this.isSettingsPanelOpen = true
-            this.$nextTick(() => {
-              this.$refs.settingsPanel.focus()
-            })
-          },
-          isNotificationsPanelOpen: false,
-          openNotificationsPanel() {
-            this.isNotificationsPanelOpen = true
-            this.$nextTick(() => {
-              this.$refs.notificationsPanel.focus()
-            })
-          },
-          isSearchPanelOpen: false,
-          openSearchPanel() {
-            this.isSearchPanelOpen = true
-            this.$nextTick(() => {
-              this.$refs.searchInput.focus()
-            })
-          },
-          isMobileSubMenuOpen: false,
-          openMobileSubMenu() {
-            this.isMobileSubMenuOpen = true
-            this.$nextTick(() => {
-              this.$refs.mobileSubMenu.focus()
-            })
-          },
-          isMobileMainMenuOpen: false,
-          openMobileMainMenu() {
-            this.isMobileMainMenuOpen = true
-            this.$nextTick(() => {
-              this.$refs.mobileMainMenu.focus()
-            })
-          },
-        }
-      }
-    </script>
+    <script src="../build/js/script.js"></script>
+    <script src="../build/js/canva.js"></script>
   </body>
 </html>
  
