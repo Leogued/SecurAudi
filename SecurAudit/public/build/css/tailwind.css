@@ -1136,7 +1136,7 @@ video {
 }
 
 .gap-8 {
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .gap-4 {
@@ -2079,7 +2079,7 @@ background-color: #090909;}
 .colonne-1{
   border-radius: 6px;
   width: 411%;
-  height: fit-content;
+  height: auto;
 }
 .colonne-11{
   border-radius: 6px;
@@ -2091,8 +2091,18 @@ background-color: #090909;}
 .colonne-2{
   border-radius: 6px;
   max-width: 396px;
-  height: fit-content;
+  height: auto;
   padding-bottom: 10px;
+}
+.posit{
+  margin-top: 31%;
+}
+.titleposit{
+  margin-top: auto;
+    margin-bottom: -31%;
+    text-align: center;
+    font-size: 30px;
+  font-weight: 600;
 }
 .politique {
   position: relative;
@@ -2220,6 +2230,9 @@ select , option {
 .bim{
   z-index: 0;
 }
+
+
+
 
 @media (min-width: 640px) {
   .sm\:max-w-md {
