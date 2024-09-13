@@ -12,11 +12,16 @@
     margin: 5px;
 }
 .Parent-1Vulnerability{
-    margin-top: -25%;
+    margin-top: -38%;
+    margin-left: -19%;
     height: fit-content;
+    width: 138%;
     border-radius: 10px;
 }
 .MenuCase{
-    height: 78%;
-    width: 50%
+    height: 114%;
+    width: 70%;
+}
+.tailmenue{
+    margin-left: 7%;
 }
